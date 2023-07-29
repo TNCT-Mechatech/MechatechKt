@@ -1,6 +1,7 @@
 plugins {
     kotlin("jvm") version "1.9.0"
-    application
+    kotlin("plugin.serialization") version "1.9.0"
+    id("com.github.johnrengelman.shadow") version "8.1.1"
 }
 
 group = "dev.t7e"
@@ -14,16 +15,17 @@ dependencies {
     testImplementation(kotlin("test"))
 
     implementation("dev.kord:kord-core:0.10.0")
-}
-
-tasks.test {
-    useJUnitPlatform()
+    implementation("com.charleskorn.kaml:kaml:0.54.0")
 }
 
 kotlin {
     jvmToolchain(8)
 }
 
-application {
-    mainClass.set("MainKt")
+tasks {
+    shadowJar {
+        manifest {
+            attributes("Main-Class" to "dev.t7e.mechatechkt.MainKt")
+        }
+    }
 }
