@@ -1,5 +1,6 @@
 plugins {
     kotlin("jvm") version "1.9.0"
+    kotlin("plugin.serialization") version "1.9.0"
     application
 }
 
@@ -14,6 +15,7 @@ dependencies {
     testImplementation(kotlin("test"))
 
     implementation("dev.kord:kord-core:0.10.0")
+    implementation("com.charleskorn.kaml:kaml:0.54.0")
 }
 
 tasks.test {
