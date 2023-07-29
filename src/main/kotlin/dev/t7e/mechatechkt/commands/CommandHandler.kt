@@ -31,9 +31,11 @@ private fun Interaction.getOptionAny(name: String): Any? {
 }
 
 fun Interaction.getOptionString(name: String): String? {
-    return getOptionAny(name) as? String
+    val value = getOptionAny(name) ?: return null
+    return value.toString()
 }
 
 fun Interaction.getOptionSnowflake(name: String): Snowflake? {
-    return getOptionString(name)?.toULong()?.let { Snowflake(it) }
+    val value = getOptionString(name) ?: return null
+    return Snowflake(value.toULong())
 }

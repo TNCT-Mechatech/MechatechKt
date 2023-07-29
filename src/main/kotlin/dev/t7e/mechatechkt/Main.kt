@@ -19,7 +19,7 @@ suspend fun main(args: Array<String>) {
     val client = Kord(BotConfig.config.botToken)
 
     val commands = mapOf(
-        "createPrivateChannel" to CreatePrivateChannelCommand,
+        "mentoring" to CreatePrivateChannelCommand,
     )
 
     client.createGlobalApplicationCommands {
