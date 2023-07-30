@@ -24,4 +24,5 @@ services:
       - TZ=Asia/Tokyo
     volumes:
     - ./config:/app/config
+    working_dir: /app
 ```
