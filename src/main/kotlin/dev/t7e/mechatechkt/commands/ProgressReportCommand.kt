@@ -1,15 +1,10 @@
 package dev.t7e.mechatechkt.commands
 
-import dev.kord.common.entity.ChannelType
-import dev.kord.common.entity.optional.OptionalSnowflake
 import dev.kord.core.behavior.channel.asChannelOfOrNull
-import dev.kord.core.behavior.createTextChannel
 import dev.kord.core.behavior.interaction.respondPublic
-import dev.kord.core.entity.channel.GuildMessageChannel
 import dev.kord.core.entity.channel.TextChannel
 import dev.kord.core.entity.interaction.ApplicationCommandInteraction
 import dev.kord.rest.builder.interaction.GlobalMultiApplicationCommandBuilder
-import dev.kord.rest.json.request.GuildChannelCreateRequest
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 import java.util.*
