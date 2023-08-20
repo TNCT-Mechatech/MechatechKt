@@ -10,14 +10,19 @@ import dev.kord.gateway.PrivilegedIntent
 import dev.t7e.mechatechkt.commands.CreatePrivateChannelCommand
 import dev.t7e.mechatechkt.commands.ProgressReportCommand
 import dev.t7e.mechatechkt.config.BotConfig
+import dev.t7e.mechatechkt.config.BotStatus
+import dev.t7e.mechatechkt.unit.ProgressReport
+
+lateinit var client: Kord
 
 @OptIn(PrivilegedIntent::class)
 suspend fun main(args: Array<String>) {
 
     //  load config
     BotConfig
+    BotStatus
 
-    val client = Kord(BotConfig.config.botToken)
+    client = Kord(BotConfig.config.botToken)
 
     val commands = mapOf(
         "mentoring" to CreatePrivateChannelCommand,
@@ -41,6 +46,9 @@ suspend fun main(args: Array<String>) {
         println("Logged in as ${kord.getSelf().username}!")
     }
 
+    //  schedule progress report
+    ProgressReport.scheduleProgressReport()
+    
     //  start bot
     client.login {
         this.intents = Intents(
