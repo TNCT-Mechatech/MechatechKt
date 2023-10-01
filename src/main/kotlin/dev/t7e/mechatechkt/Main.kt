@@ -10,6 +10,7 @@ import dev.kord.gateway.PrivilegedIntent
 import dev.t7e.mechatechkt.commands.CreateOJTChannelCommand
 import dev.t7e.mechatechkt.commands.CreatePrivateChannelCommand
 import dev.t7e.mechatechkt.commands.ProgressReportCommand
+import dev.t7e.mechatechkt.commands.WhereOJTChannelCommand
 import dev.t7e.mechatechkt.config.BotConfig
 import dev.t7e.mechatechkt.config.BotStatus
 import dev.t7e.mechatechkt.unit.ProgressReport
@@ -28,7 +29,8 @@ suspend fun main(args: Array<String>) {
     val commands = mapOf(
         "mentoring" to CreatePrivateChannelCommand,
         "shinchoku" to ProgressReportCommand,
-        "create-ojt" to CreateOJTChannelCommand
+        "create-ojt" to CreateOJTChannelCommand,
+        "ojt" to WhereOJTChannelCommand
     )
 
     client.createGlobalApplicationCommands {
