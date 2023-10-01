@@ -18,7 +18,6 @@ object WhereOJTChannelCommand : CommandHandler {
 
         //  arguments
         val userId = interaction.getOptionSnowflake("user")!!
-        val user = guild.getMember(userId)
 
         //  get ojt channel
         val channel = channels.find {
