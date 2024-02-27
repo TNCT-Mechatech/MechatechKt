@@ -13,6 +13,7 @@ import dev.t7e.mechatechkt.commands.ProgressReportCommand
 import dev.t7e.mechatechkt.commands.WhereOJTChannelCommand
 import dev.t7e.mechatechkt.config.BotConfig
 import dev.t7e.mechatechkt.config.BotStatus
+import dev.t7e.mechatechkt.unit.CleanUp
 import dev.t7e.mechatechkt.unit.ProgressReport
 
 lateinit var client: Kord
@@ -52,6 +53,8 @@ suspend fun main(args: Array<String>) {
 
     //  schedule progress report
     ProgressReport.scheduleProgressReport()
+    //  schedule clean up
+    CleanUp.scheduleCleanUp()
     
     //  start bot
     client.login {
