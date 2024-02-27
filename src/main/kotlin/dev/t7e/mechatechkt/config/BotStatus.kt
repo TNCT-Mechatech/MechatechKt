@@ -13,6 +13,7 @@ import java.io.File
 @Serializable
 data class BotStatus(
     var progressReportChannel: ULong = "0".toULong(),
+    var cleanUpChannel: ULong = "0".toULong(),
     var enabledProgressReport: Boolean = "false".toBoolean()
 ) {
     companion object {
