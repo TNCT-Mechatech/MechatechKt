@@ -14,7 +14,8 @@ import java.io.File
 data class BotStatus(
     var progressReportChannel: ULong = "0".toULong(),
     var cleanUpChannel: ULong = "0".toULong(),
-    var enabledProgressReport: Boolean = "false".toBoolean()
+    var enabledProgressReport: Boolean = "false".toBoolean(),
+    var enabledCleanUp: Boolean = "false".toBoolean()
 ) {
     companion object {
         private val yaml = Yaml(configuration = YamlConfiguration(encodeDefaults = true, strictMode = false))

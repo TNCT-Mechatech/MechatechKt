@@ -31,7 +31,7 @@ object CleanUp {
 
         val task = timerTask {
             //  check enabled
-            if (!BotStatus.config.enabledProgressReport) return@timerTask
+            if (!BotStatus.config.enabledCleanUp) return@timerTask
 
             GlobalScope.launch {
                 //  check today is not weekend
